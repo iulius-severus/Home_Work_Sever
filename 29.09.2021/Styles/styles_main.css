@@ -2,12 +2,10 @@
         background: darkslategrey;
         margin: 0;
 }
-
 .head{
         background: grey;
         height: 70px;
 }
-
 .logo{
         width: 80px;
         height: 70px;
@@ -20,17 +18,14 @@
         padding-left: 450px;
         position: absolute;
 }
-
 .foto {
         float: left;
 }
-
 .picture {
         border-radius: 10%;
         margin: 3px;
         border: 3px goldenrod ridge;
 }
-
 .name {
         float: right;
         background: darkgray;
@@ -42,7 +37,6 @@
         border-radius: 40px;
         border: 3px goldenrod ridge;
 }
-
 .about_me {
         float: left;
         background: steelblue;
@@ -54,7 +48,6 @@
         border: 3px goldenrod double;
         font-size: 30px;
 }
-
 .about_lessons {
         float: left;
         background: steelblue;
@@ -65,16 +58,18 @@
         text-align: center;
         border: 3px goldenrod double;
         font-size: 30px;
-
 }
-
 .text {
         font-size: 20px;
         text-align: left;
 }
-
 .down{
         float: left;
         background: darkslategrey;
         width: 100%;
 }
+.menu{
+        display: inline-block;
+
+}
+
