@@ -1,0 +1,32 @@
+.base{
+    margin-top: 200px;
+    background-color: greenyellow;
+
+}
+.Sc{
+    float: left;
+    width: 50%;
+}
+.Ti{
+    float: left;
+    width: 50%;
+}
+.Ga{
+    float: left;
+    width: 50%;
+}
+.Ge{
+    float: left;
+    width: 50%;
+}
+.name{
+        font-size: 30px;
+}
+
+
+
+
+
+
+
+
