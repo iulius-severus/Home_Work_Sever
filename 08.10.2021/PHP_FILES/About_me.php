@@ -30,13 +30,9 @@ else{
         <b>Студенты Факт.Школы</b>
     </div>-->
     <div class="menu">
-
-
                 <div class="Mendeleev"><a href="Table_of_Mendeleev.php" target="_blank"><span class="nav_text">Таблица Д.И.Менделеева</span></a></div>
                 <div class="Animals"><a href="Animals.php" target="_blank"><span>Хомяк.Решение</span></a></div>
                 <div class="Array"><a href="Array_problems.php" target="_blank">Массивы</a></div>
-
-
     </div>
 </header>
 <main>
