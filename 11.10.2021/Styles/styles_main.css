@@ -113,6 +113,17 @@ a{
 .text {
         font-size: 20px;
         text-align: left;
+
+}
+.scripts{
+        float: left;
+        border: 3px goldenrod double;
+        width: 99%;
+        background-color: greenyellow;
+        margin: 5px;
+        font-size: 20px;
+        border-radius: 10px;
+
 }
 .down{
         float: end;
