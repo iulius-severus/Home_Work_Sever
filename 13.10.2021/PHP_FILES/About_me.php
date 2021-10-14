@@ -2,7 +2,20 @@
 /*date_default_timezone_set('America/New_York');*/
 /*date_default_timezone_set('Asia/Tokyo');*/
 /*date_default_timezone_set('Australia/Sydney');*/
+function style_of_time(){
+    $t = date("H:i:s");
+    if(($t >= "08:00") && ($t <= "23:59"))
+    {
+        echo "<link rel='stylesheet' href='../Styles/styles_main.css'>";
+    }
+    else{
+        echo "<link rel='stylesheet' href='../Styles/styles_night_theme.css'>";
+    }
+}
+style_of_time();
 $t = date("H:i:s");
+echo "$t";
+/*$t = date("H:i:s");
 echo "$t";
 if(($t >= "08:00") && ($t <= "23:59"))
 {
@@ -10,7 +23,7 @@ if(($t >= "08:00") && ($t <= "23:59"))
 }
 else{
     echo "<link rel='stylesheet' href='../Styles/styles_night_theme.css'>";
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -52,10 +65,10 @@ else{
             изучение сферы web-разработки (Hexlet), затем прошел краткий курс по основам кибербезопасности (осень 2019г),
             и уже в 2020 г. освоил курс от университета Иннополис - "Основы программирования.Быстрый старт". Зачем я поступил
             в Факт.Школу? Для того, чтобы начать карьеру web-разработчика. И не в отдаленной перспективе, а в реальные обозримые сроки.:)';
-
-            echo str_replace('Я - Юлий Север.', '<span style="color: ghostwhite">Я - Юлий Север.</span>', $a);
-
-
+            function replace($a){
+                echo str_replace('Я - Юлий Север.', '<span style="color: ghostwhite">Я - Юлий Север.</span>', $a);
+            }
+            replace($a)
             ?>
         </p>
     </div>
@@ -72,19 +85,22 @@ else{
             из-за чего эти студенты отстают от группы, отвлекают преподавателя. Поэтому хотел бы предложить, если это возможно, 
             при наборе последующих групп заранее размещать на GooglDisc определенную версию IDE и OpenServer\'a.';
             //Задача №1. Часть вторая.
-            $arr = explode(" ", $b);
-            foreach ($arr as $key => $value){
+            function color_of_words($b){
+                $arr = explode(" ", $b);
+                foreach ($arr as $key => $value){
 
-                if(array_search($key, array_keys($arr)) % 2 == 0){
+                    if(array_search($key, array_keys($arr)) % 2 == 0){
 
-                    echo "<span style='color: floralwhite' align='left'>  $value</basefont>";
+                        echo "<span style='color: floralwhite' align='left'>  $value</basefont>";
+                    }
+                    elseif(array_search($key, array_keys($arr)) % 2 !=0){
+
+                        echo  "<span style='color:red' align='left' > $value </basefont>";
+                    }
+
                 }
-                elseif(array_search($key, array_keys($arr)) % 2 !=0){
-
-                    echo  "<span style='color:red' align='left' > $value </basefont>";
-                }
-
             }
+            color_of_words($b)
             ?>
         </p>
     </div>
@@ -96,30 +112,65 @@ else{
         echo "</pre>";
         echo "<pre>";
         echo "<b>" . "Задача №2." . "</b>" . "</br>";
-        $a_1 = mb_substr_count($a, 'а') + mb_substr_count($b, 'а');
-        $a_2 = mb_substr_count($a, 'е') + mb_substr_count($b, 'е');
-        $a_3 = mb_substr_count($a, 'и') + mb_substr_count($b, 'и');
-        $a_4 = mb_substr_count($a, 'о') + mb_substr_count($b, 'о');
-        $a_5 = mb_substr_count($a, 'у') + mb_substr_count($b, 'у');
-        $a_6 = mb_substr_count($a, 'ы') + mb_substr_count($b, 'ы');
-        $a_7 = mb_substr_count($a, 'э') + mb_substr_count($b, 'э');
-        $a_8 = mb_substr_count($a, 'ю') + mb_substr_count($b, 'ю');
-        $a_9 = mb_substr_count($a, 'я') + mb_substr_count($b, 'я');
+        //$a_1 = mb_substr_count($a, 'а') + mb_substr_count($b, 'а');
+        //$a_2 = mb_substr_count($a, 'е') + mb_substr_count($b, 'е');
+        //$a_3 = mb_substr_count($a, 'и') + mb_substr_count($b, 'и');
+        //$a_4 = mb_substr_count($a, 'о') + mb_substr_count($b, 'о');
+        //$a_5 = mb_substr_count($a, 'у') + mb_substr_count($b, 'у');
+        //$a_6 = mb_substr_count($a, 'ы') + mb_substr_count($b, 'ы');
+        //$a_7 = mb_substr_count($a, 'э') + mb_substr_count($b, 'э');
+        //$a_8 = mb_substr_count($a, 'ю') + mb_substr_count($b, 'ю');
+        //$a_9 = mb_substr_count($a, 'я') + mb_substr_count($b, 'я');
+        function vowel($a, $b){
+            if($a_1 = mb_substr_count($a, 'а') + mb_substr_count($b, 'а'))
+            {
+                echo "Гласная 'а' повторяется " . "$a_1 " . "раз." . "</br>";
+            }
+            if ($a_2 = mb_substr_count($a, 'е') + mb_substr_count($b, 'е')){
+                echo "Гласная 'е' повторяется " . "$a_2 " . "раза." . "</br>";
+            }
+            if($a_3 = mb_substr_count($a, 'и') + mb_substr_count($b, 'и')){
+                echo "Гласная 'и' повторяется " . "$a_3 " . "раз." . "</br>";
+            }
+            if($a_4 = mb_substr_count($a, 'о') + mb_substr_count($b, 'о')){
+                echo "Гласная 'о' повторяется " . "$a_4 " . "раз." . "</br>";
+            }
+            if($a_5 = mb_substr_count($a, 'у') + mb_substr_count($b, 'у')){
+                echo "Гласная 'у' повторяется " . "$a_5 " . "раз." . "</br>";
+            }
+            if($a_6 = mb_substr_count($a, 'ы') + mb_substr_count($b, 'ы')){
+                echo "Гласная 'ы' повторяется " . "$a_6 " . "раза." . "</br>";
+            }
+            if($a_7 = mb_substr_count($a, 'э') + mb_substr_count($b, 'э')){
+                echo "Гласная 'э' повторяется " . "$a_7 " . "раз." . "</br>";
+            }
+            if($a_8 = mb_substr_count($a, 'ю') + mb_substr_count($b, 'ю')){
+                echo "Гласная 'ю' повторяется " . "$a_8 " . "раз." . "</br>";
+            }
+            if($a_9 = mb_substr_count($a, 'я') + mb_substr_count($b, 'я')){
+                echo "Гласная 'я' повторяется " . "$a_9 " . "раза." . "</br>";
+            }
+        }
         echo "<u>" . "Число повторений гласных для блоков \"Обо мне\" и \"О занятиях:\"" . "</u>". "</br>";
-        echo "Гласная 'а' повторяется " . "$a_1 " . "раз." . "</br>";
-        echo "Гласная 'е' повторяется " . "$a_2 " . "раза." . "</br>";
-        echo "Гласная 'и' повторяется " . "$a_3 " . "раз." . "</br>";
-        echo "Гласная 'о' повторяется " . "$a_4 " . "раз." . "</br>";
-        echo "Гласная 'у' повторяется " . "$a_5 " . "раз." . "</br>";
-        echo "Гласная 'ы' повторяется " . "$a_6 " . "раза." . "</br>";
-        echo "Гласная 'э' повторяется " . "$a_7 " . "раз." . "</br>";
-        echo "Гласная 'ю' повторяется " . "$a_8 " . "раз." . "</br>";
-        echo "Гласная 'я' повторяется " . "$a_9 " . "раза." . "</br>";
+        vowel($a, $b);
+        //echo "Гласная 'а' повторяется " . "$a_1 " . "раз." . "</br>";
+        //echo "Гласная 'е' повторяется " . "$a_2 " . "раза." . "</br>";
+        //echo "Гласная 'и' повторяется " . "$a_3 " . "раз." . "</br>";
+        //echo "Гласная 'о' повторяется " . "$a_4 " . "раз." . "</br>";
+        //echo "Гласная 'у' повторяется " . "$a_5 " . "раз." . "</br>";
+        //echo "Гласная 'ы' повторяется " . "$a_6 " . "раза." . "</br>";
+        //echo "Гласная 'э' повторяется " . "$a_7 " . "раз." . "</br>";
+        //echo "Гласная 'ю' повторяется " . "$a_8 " . "раз." . "</br>";
+        //echo "Гласная 'я' повторяется " . "$a_9 " . "раза." . "</br>";
         echo "</pre>";
         echo "<pre>";
         echo "<b>" . "Задача №3." . "</b>" . "</br>";
+        function count_of_words($c, $d){
+            echo str_word_count($c) + str_word_count($d);
+        }
         echo "<u>" . "Количество слов в блоках \"Обо мне\" и \"О занятиях\" равно:" . "</u>". "</br>";
-        echo str_word_count($a) + str_word_count($b) . " слова." . "</br>";
+        count_of_words($a, $b) .  " слова." . "</br>";
+        //echo str_word_count($a) + str_word_count($b) . " слова." . "</br>";
         echo "</pre>";
         echo "<pre>";
         echo "<b>" . "Задача №4." . "</b>" . "</br>";
@@ -127,35 +178,58 @@ else{
         $date_2 = new DateTime("2021-12-10");
         $date_3 = $date_2->diff($date_1)->format("%a");
         echo "$date_3"  . "</br>";*/ //Неточно считает. Добавляет лишние дни (около 50 дней).
+        function diff_of_time($g, $r){
+            if($g = time("2021-12-10") & $r = strtotime("1990-06-06") & $c = $g - $r){
+                return floor($c / (60 * 60 * 24));
+            }
+        }
         $date_now = time("2021-12-10");
         $date_start = strtotime("1990-06-06");
-        $datediff = $date_now - $date_start;
+        echo "С 06.06.1990 по  12.10.2021 прошло " . diff_of_time($date_now, $date_start)  . " дня.";
+        //$datediff = $date_now - $date_start;
         //echo floor($datediff / (60 * 60 * 24));
-        echo "С 06.06.1990 по  12.10.2021 прошел " . floor($datediff / (60 * 60 * 24)) . " день.";
+        //echo "С 06.06.1990 по  12.10.2021 прошел " . floor($datediff / (60 * 60 * 24)) . " день.";
         echo "</pre>";
         echo "<pre>";
         echo "<b>" . "Задача №5." . "</b>" . "</br>";
         echo "<i>" . "Дана строка. Проверьте, что она заканчивается на \".png\". Если это так, выведите \"да\", если не так - \"нет\"." . "</i>>" . "</br>";
         echo "<b>" . "Ответ:" . "</b>" . "</br>";
+        function content($z){
+            if($z = "Данная папка содержит файлы с расширением .png"){
+                if (strpos($z, ".png") !== false){
+                    echo "Да, содержит.";
+                }
+                elseif (strpos($z, ".png") == false){
+                    echo "Нет, не содержит.";
+                }
+            }
+        }
         $f = "Данная папка содержит файлы с расширением .png";
-        if (strpos($f, ".png") !== false) {
+        content($f);
+        /*if (strpos($f, ".png") !== false) {
             echo "Да, содержит.";
         }
         elseif (strpos($f, ".png") == false){
             echo "Нет, не содержит.";
-        }
+        }*/
         echo "</pre>";
         echo "<pre>";
         echo "<b>" . "Задача №6." . "</b>" . "</br>";
+        function string_1($a){
+            if($a = "HTML CSS PHP"){
+                echo mb_substr($a, 0, 4) . "</br>";
+                echo mb_substr($a, 5, 3) . "</br>";
+                echo mb_substr($a, 9, 3) . "</br>";
+            }
+        }
         $g = "HTML CSS PHP";
-        echo mb_substr($g, 0, 4) . "</br>";
-        echo mb_substr($g, 5, 7) . "</br>";
-        echo mb_substr($g, 9, 11) . "</br>";
+        string_1($g);
+        //$g = "HTML CSS PHP";
+        //echo mb_substr($g, 0, 4) . "</br>";
+        //echo mb_substr($g, 5, 3) . "</br>";
+        //echo mb_substr($g, 9, 3) . "</br>";
         //Почему-то возвращает PHP дважды. Ошибку найти самостоятельно не удалось((
         echo "</pre>";
-
-
-
         ?>
     </div>
 </main>
