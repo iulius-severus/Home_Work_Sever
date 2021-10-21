@@ -1,7 +1,21 @@
 <?
+$color = $_POST['color'];
+if($color == 'blueviolet'){
+    setcookie('color', 'blueviolet', time() + 3600 * 24 * 7);
+}
+if($color == 'green'){
+    setcookie('color', 'green', time() + 3600 * 24 * 7);
+}
+if($color == 'gold'){
+    setcookie('color', 'gold', time() + 3600 * 24 * 7);
+}
+if($color == 'blue') {
+    setcookie('color', 'blue', time() + 3600 * 24 * 7);
+}
 //header("Location: Comment.php");
 $login_true = "Sever";
 $password_true = "0606";
+
 function entry()
 {
     if(count($_POST)>0)
@@ -20,7 +34,7 @@ function entry()
         }
     }
 }
-entry()
+entry();
 
 ?>
 <!doctype html>
@@ -33,7 +47,7 @@ entry()
     <link rel="stylesheet" href="../Styles/Authorization.css">
     <title>Authorization</title>
 </head>
-<body>
+<body style="background-color: <? echo $_COOKIE['color']?>">
 <form class="in" method="post">
     <p class="start">Авторизация</p>
     <p>

@@ -5,7 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="../Styles/style_animals.css">
 </head>
-<body>
+<body style="background-color: <? echo $_COOKIE['color'] ?>">
     <table class="my_table">
         <caption align="bottom">Таблица животных</caption>
         <tr>

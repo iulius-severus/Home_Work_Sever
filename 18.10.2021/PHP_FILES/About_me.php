@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 /*date_default_timezone_set('America/New_York');*/
 /*date_default_timezone_set('Asia/Tokyo');*/
 /*date_default_timezone_set('Australia/Sydney');*/
@@ -24,6 +26,7 @@ if(($t >= "08:00") && ($t <= "23:59"))
 else{
     echo "<link rel='stylesheet' href='../Styles/styles_night_theme.css'>";
 }*/
+
 ?>
 
 <!DOCTYPE html>
@@ -36,20 +39,59 @@ else{
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Студенты Факт.Школы</title>
 </head>
-<body class="foundation">
+<body class="foundation" style="background-color: <? echo $_COOKIE['color']?>">
 <header class="head">
     <a href="https://fact.digital/" target="_blank" title="Перейти на сайт компании Факт"><img class="logo" src="../Images/Fact.jpg"></a>
-    <!--<div class="students">
-        <b>Студенты Факт.Школы</b>
-    </div>-->
     <div class="menu">
-                <div class="Mendeleev"><a href="Table_of_Mendeleev.php" target="_blank"><span class="nav_text">Таблица Д.И.Менделеева</span></a></div>
-                <div class="Animals"><a href="Animals.php" target="_blank"><span>Хомяк.Решение</span></a></div>
-                <div class="Array"><a href="Array_problems.php" target="_blank">Массивы</a></div>
+                <div class="Mendeleev"><a href="Table_of_Mendeleev.php" target="_blank"><span class="n1">Таблица Д.И.Менделеева</span></a></div>
+                <div class="Animals"><a href="Animals.php" target="_blank"><span class="n2">Хомяк.Решение</span></a></div>
+                <div class="Array"><a href="Array_problems.php" target="_blank"><span class="n3">Массивы</span></a></div>
+
+                <div class="Links"><span class="n4"></span>
+                    <?
+                    if($_COOKIE['last'] === 'Fact' ){
+                        echo "<span style='font-size: 15px'>Недавно Вы посетили сайт компании Факт.</span>";
+                    }
+                    if ($_COOKIE['last'] === 'Bitrix'){
+                        echo "<span style='font-size: 15px'>Недавно Вы посетили сайт Битрикс.</span>";
+                    }
+                    elseif($_COOKIE['last'] !== 'Fact' && $_COOKIE['last'] !== 'Bitrix'){
+                        echo "<span style='font-size: 15px'>Вы не посещали сторонние сайты.</span>";
+                    }
+                    /*if(isset($_COOKIE['_ddg1']))
+                    foreach ($_COOKIE["_ddg1"] as $value)
+                    {
+                        echo "Факт";
+                    }
+                    else
+                        {
+                            if(isset($_COOKIE['_fbp']))
+                                foreach ($_COOKIE["_ddg1"] as $value)
+                                {
+                                    echo "Битрикс";
+                                }
+                        }
+*/
+                    ?>
+                </div>
+                <div class="Colors">
+                    <form method="post" id="">
+                        <span class="color1">Изменить цвет фона</span>
+                        <select name="color" id="">
+                        <option value="blueviolet">Фиолетовый</option>
+                        <option value="green">Зеленый</option>
+                        <option value="gold">Золотистый</option>
+                        <option value="blue">Голубой</option>
+                            <input type="submit" value="Изменить">
+                        </select>
+
+                    </form>
+                </div>
                 <div class="Entry">
                     <a href="Authorization.php" target="_blank"><span class="in">Авторизация /</span></a>
                     <a href="" target="_blank"><span class="in">Регистрация</span></a>
                 </div>
+
     </div>
 </header>
 <main>

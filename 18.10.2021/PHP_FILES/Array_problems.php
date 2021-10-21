@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../Styles/array_style.css">
 </head>
-<body>
+<body style="background-color: <? echo $_COOKIE['color'] ?>">
 <div class="start"><b><i>Домашняя работа от 08.10.2021.</i></b></div>
 <?
 echo "<pre>";

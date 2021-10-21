@@ -8,7 +8,7 @@
         width: 100%;
         background: grey;
         height: 70px;
-        justify-content: space-between;
+
 }
 .logo{
         width: 100px;
@@ -18,15 +18,13 @@
 }
 .menu{
         display: flex;
-        justify-content: space-between;
-        width: 1034px;
+        justify-content: center;
+        width: 80%;
         height: 70px;
-
-
 }
 .Mendeleev{
         text-align: center;
-        font-size: 20px;
+        font-size: 10px;
         background-color: goldenrod;
         margin: 10px;
         padding-top: 6px;
@@ -38,7 +36,7 @@
 }
 .Animals{
         text-align: center;
-        font-size: 20px;
+        font-size: 10px;
         background-color: goldenrod;
         padding-top: 6px;
         margin: 10px;
@@ -50,7 +48,7 @@
 }
 .Array{
         text-align: center;
-        font-size: 20px;
+        font-size: 10px;
         background-color: goldenrod;
         padding-top: 6px;
         margin: 10px;
@@ -60,32 +58,63 @@
         border-width: 5px;
         border-color: gold;
 }
+.Links{
+        text-align: center;
+        font-size: 10px;
+        background-color: goldenrod;
+        padding-top: 6px;
+        margin: 10px;
+        width: 50%;
+        border-radius: 10px;
+        border-style: ridge;
+        border-width: 5px;
+        border-color: gold;
+
+}
+.n1, .n2, .n3{
+        font-size: 15px;
+}
+.n4{
+        font-size: 15px;
+        text-align: left;
+}
 .Entry{
         text-align: center;
         font-size: 20px;
-
         background-color: black;
         padding-top: 6px;
         margin: 10px;
-        margin-left: 100px;
         width: 50%;
         border-radius: 10px;
         border-style: ridge;
         border-width: 5px;
         border-color: gold;
 }
+.Colors{
+        text-align: center;
+        font-size: 20px;
+        float: right;
+        background-color: goldenrod;
+        margin: 10px;
+        width: 55%;
+        border-radius: 10px;
+        border-style: ridge;
+        border-width: 5px;
+        border-color: gold;
+}
+.color1{
+        font-size: 15px;
+}
+.color2{
+        float: left;
+        width: 40%;
+}
 .in{
         color: cornsilk;
+        font-size: 15px;
 }
 a{
         text-decoration: none;
-}
-.students {
-        display: flex;
-        align-items: start;
-        color: white;
-        font-size: 20px;
-        height: 20px;
 }
 .foto {
         float: left;
@@ -131,7 +160,6 @@ a{
 .text {
         font-size: 20px;
         text-align: left;
-
 }
 .scripts{
         float: left;
@@ -141,7 +169,6 @@ a{
         margin: 5px;
         font-size: 20px;
         border-radius: 10px;
-
 }
 .down{
         float: end;
@@ -173,7 +200,6 @@ a{
         border-style: ridge;
         border-width: 10px;
         border-color: cyan;
-
 }
 .Augustus, .Tiberius, .Caligula, .Claudius{
         margin: 20px;
@@ -243,7 +269,6 @@ a{
                 background: grey;
                 height: 70px;
                 justify-content: space-between;
-
         }
         .students {
                 color: white;
@@ -347,7 +372,6 @@ a{
                 background: grey;
                 height: 70px;
                 justify-content: space-between;
-
         }
         .students {
                 color: white;
@@ -448,7 +472,6 @@ a{
                 text-align: center;
                 font-size: 15px;
         }
-
 }
 /*Для монитора ПК верстка страницы реализована по умолчанию,
 насколько понимаю.Т.е. первоначальный вариант и есть вариант

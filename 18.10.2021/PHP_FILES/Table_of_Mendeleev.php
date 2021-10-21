@@ -5,7 +5,7 @@
     <title>Periodic_table_of_Mendeleev</title>
     <link rel="stylesheet" href="../Styles/styles_of_table.css">
 </head>
-<body class="base">
+<body class="base" style="background-color: <? echo $_COOKIE['color'] ?>">
 <div class="Sc">
     <table frame="border" width="80" align="right" bgcolor="aqua">
         <tr>

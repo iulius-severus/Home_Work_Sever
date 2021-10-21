@@ -2,9 +2,10 @@
 if(isset($_POST['comment'])){
     $to = "email";
     $content = $_POST['comment'];
-    if(mail("$to", "Text", "comment"))
+    if(mail("$to", "Text", "$content"))
     {
-        header("Location: questionnaire.php");
+
+        header("Location: Links.php");
         exit();
     }
     else{
@@ -25,16 +26,13 @@ if(isset($_POST['comment'])){
     <link rel="stylesheet" href="../Styles/comment.css">
     <title>Document</title>
 </head>
-<body>
-
+<body style="background-color: <? echo $_COOKIE['color'] ?>">
         <form method="post" >
             <p>Отправьте Ваш комментарий касательно данной страницы.</p><br>
-            <textarea cols="50" rows="25" name="comment" maxlength="500"></textarea>
+            <textarea cols="50" rows="20" name="comment" maxlength="500"></textarea>
             <p class="button">
                 <button>Отправить</button>
             </p>
         </form>
-
-
 </body>
 </html>
