@@ -13,9 +13,8 @@ if($color == 'blue') {
     setcookie('color', 'blue', time() + 3600 * 24 * 7);
 }
 //header("Location: Comment.php");
-$login_true = "Sever";
+/*$login_true = "Sever";
 $password_true = "0606";
-
 function entry()
 {
     if(count($_POST)>0)
@@ -35,7 +34,50 @@ function entry()
     }
 }
 entry();
+*/
+function entry()
+{
+    $hostname = 'localhost';
+    $username = 'Iulius';
+    $password_db = 'iulius1990';
+    $db_name = 'authorization';
+    $db_connect = mysqli_connect($hostname, $username, $password_db, $db_name);
+    mysqli_set_charset($db_connect, 'utf8');
+    //if(count($_REQUEST)>0)
+    if ( !empty($_REQUEST['password']) and !empty($_REQUEST['login']) )
+    {
+        $login_true = trim($_REQUEST['login']);
+        $password_true = trim($_REQUEST['password']);
+        $query = 'SELECT * FROM `enter` WHERE Login = "'.$login_true.'" AND `Password` = "'.$password_true.'" ';
+        $result = mysqli_query($db_connect, $query);
+        $user = mysqli_fetch_assoc($result);
+        //!empty($user)
+        if(!empty($user))
+        {
+            header("Location: Comment.php");
+            exit();
+        }
+        else{
+            header("Location: End.php");
+            exit();
 
+        }
+        //Логин для авторизации: Iulius
+        //Пароль для авторизации: iulius1990
+
+        //Непонятно почему, но  если в else я закладываю echo,
+        //то это echo выводится постоянно. Когда же я закладываю header,
+        //то при попытке открыть страницу автоизации в браузере из IDE сразу же
+        //отрабатывается else.
+        //Очевидно,я чего-то недопонимаю в логике работы. Прошу разъяснить.
+
+        /*else{
+            echo "Asta la vista!";
+        }
+        */
+    }
+}
+entry();
 ?>
 <!doctype html>
 <html lang="en">
