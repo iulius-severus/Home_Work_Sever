@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 /*date_default_timezone_set('America/New_York');*/
 /*date_default_timezone_set('Asia/Tokyo');*/
 /*date_default_timezone_set('Australia/Sydney');*/
@@ -25,12 +24,15 @@ if(($t >= "08:00") && ($t <= "23:59"))
 }
 else{
     echo "<link rel='stylesheet' href='../Styles/styles_night_theme.css'>";
-}*/
-
+}
+*/
+/*require 'ClassEnter.php';
+$Change = new Color();
+$Change->Change();
+*/
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -41,7 +43,7 @@ else{
 </head>
 <body class="foundation" style="background-color: <? echo $_COOKIE['color']?>">
 <header class="head">
-    <a href="https://fact.digital/" target="_blank" title="Перейти на сайт компании Факт"><img class="logo" src="../Images/Fact.jpg"></a>
+    <a href="https://fact.digital/" target="_blank" title="Перейти на сайт компании Факт"><img class="logo" src="../Images/Fact.jpg" alt="Image not found"></a>
     <div class="menu">
                 <div class="Mendeleev"><a href="Table_of_Mendeleev.php" target="_blank"><span class="n1">Таблица Д.И.Менделеева</span></a></div>
                 <div class="Animals"><a href="Animals.php" target="_blank"><span class="n2">Хомяк.Решение</span></a></div>
@@ -58,40 +60,25 @@ else{
                     elseif($_COOKIE['last'] !== 'Fact' && $_COOKIE['last'] !== 'Bitrix'){
                         echo "<span style='font-size: 15px'>Вы не посещали сторонние сайты.</span>";
                     }
-                    /*if(isset($_COOKIE['_ddg1']))
-                    foreach ($_COOKIE["_ddg1"] as $value)
-                    {
-                        echo "Факт";
-                    }
-                    else
-                        {
-                            if(isset($_COOKIE['_fbp']))
-                                foreach ($_COOKIE["_ddg1"] as $value)
-                                {
-                                    echo "Битрикс";
-                                }
-                        }
-*/
                     ?>
                 </div>
                 <div class="Colors">
-                    <form method="post" id="">
+                    <form method="post">
                         <span class="color1">Изменить цвет фона</span>
-                        <select name="color" id="">
+                        <select name="color">
                         <option value="blueviolet">Фиолетовый</option>
                         <option value="green">Зеленый</option>
                         <option value="gold">Золотистый</option>
                         <option value="blue">Голубой</option>
-                            <input type="submit" value="Изменить">
                         </select>
-
+                        <input type="submit" value="Изменить">
                     </form>
                 </div>
+
                 <div class="Entry">
                     <a href="Authorization.php" target="_blank"><span class="in">Авторизация /</span></a>
                     <a href="" target="_blank"><span class="in">Регистрация</span></a>
                 </div>
-
     </div>
 </header>
 <main>
@@ -114,7 +101,7 @@ else{
             function replace($a){
                 echo str_replace('Я - Юлий Север.', '<span style="color: ghostwhite">Я - Юлий Север.</span>', $a);
             }
-            replace($a)
+            replace($a);
             ?>
         </p>
     </div>
@@ -279,40 +266,39 @@ else{
         ?>
     </div>
 </main>
-
 <div class="container">
     <div class="Augustus">
-        <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%BA%D1%82%D0%B0%D0%B2%D0%B8%D0%B0%D0%BD_%D0%90%D0%B2%D0%B3%D1%83%D1%81%D1%82" target="_blank"><img class="A"  src="../Images/Augustus.jpg"></a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%BA%D1%82%D0%B0%D0%B2%D0%B8%D0%B0%D0%BD_%D0%90%D0%B2%D0%B3%D1%83%D1%81%D1%82" target="_blank"><img class="A"  src="../Images/Augustus.jpg" alt="Image not found"></a>
         <div class="nomen1">Gaius Iulius Caesar Octavianus</div>
     </div>
     <div class="Tiberius">
-        <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D0%B1%D0%B5%D1%80%D0%B8%D0%B9" target="_blank"><img class="B" src="../Images/Tiberius.jpg"></a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D0%B1%D0%B5%D1%80%D0%B8%D0%B9" target="_blank"><img class="B" src="../Images/Tiberius.jpg" alt="Image not found"></a>
         <div class="nomen2">Tiberius Iulius Caesar Augustus</div>
     </div>
     <div class="Caligula">
-        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B8%D0%B3%D1%83%D0%BB%D0%B0" target="_blank"><img class="C" src="../Images/Caligula.jpg"></a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B8%D0%B3%D1%83%D0%BB%D0%B0" target="_blank"><img class="C" src="../Images/Caligula.jpg" alt="Image not found"></a>
         <div class="nomen3">Gaius Iulius Caesar Augustus Germanicus</div>
     </div>
     <div class="Claudius">
-        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B0%D0%B2%D0%B4%D0%B8%D0%B9" target="_blank"><img class="D" src="../Images/Claudius.jpg"></a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B0%D0%B2%D0%B4%D0%B8%D0%B9" target="_blank"><img class="D" src="../Images/Claudius.jpg" alt="Image not found"></a>
         <div class="nomen4">Tiberius Claudius Caesar Augustus Germanicus</div>
     </div>
 </div>
 <div class="grid">
     <div class="Nero">
-        <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D1%80%D0%BE%D0%BD" target="_blank"><img class="E" src="../Images/Nero.jpg"></a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D1%80%D0%BE%D0%BD" target="_blank"><img class="E" src="../Images/Nero.jpg" alt="Image not found"></a>
         <div class="nomen5">Nero Claudius Caesar Augustus Germanicus</div>
     </div>
     <div class="Galba">
-        <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D1%8C%D0%B1%D0%B0" target="_blank"><img class="F" src="../Images/Galba.jpg" height="500" width="400"></a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D1%8C%D0%B1%D0%B0" target="_blank"><img class="F" src="../Images/Galba.jpg" height="500" width="400" alt="Image not found"></a>
         <div class="nomen6">Servius Sulpicius Galba</div>
     </div>
     <div class="Otho">
-        <a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%82%D0%BE%D0%BD" target="_blank"><img class="G" src="../Images/Otho.jpg"></a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%82%D0%BE%D0%BD" target="_blank"><img class="G" src="../Images/Otho.jpg" alt="Image not found"></a>
         <div class="nomen7">Marcus Salvius Otho</div>
     </div>
     <div class="Vitellius">
-        <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%B2%D0%BB_%D0%92%D0%B8%D1%82%D0%B5%D0%BB%D0%BB%D0%B8%D0%B9" target="_blank"><img CLASS="H" src="../Images/Vitellius.jpg"></a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%B2%D0%BB_%D0%92%D0%B8%D1%82%D0%B5%D0%BB%D0%BB%D0%B8%D0%B9" target="_blank"><img CLASS="H" src="../Images/Vitellius.jpg" alt="Image not found"></a>
         <div class="nomen8">Aulus Vitellius</div>
     </div>
 </div>

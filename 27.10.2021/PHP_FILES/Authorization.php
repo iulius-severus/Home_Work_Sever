@@ -12,7 +12,6 @@ if($color == 'gold'){
 if($color == 'blue') {
     setcookie('color', 'blue', time() + 3600 * 24 * 7);
 }
-//header("Location: Comment.php");
 /*$login_true = "Sever";
 $password_true = "0606";
 function entry()
@@ -35,7 +34,7 @@ function entry()
 }
 entry();
 */
-function entry()
+/*function entry()
 {
     $hostname = 'localhost';
     $username = 'Iulius';
@@ -60,24 +59,18 @@ function entry()
         else{
             header("Location: End.php");
             exit();
-
         }
         //Логин для авторизации: Iulius
         //Пароль для авторизации: iulius1990
-
-        //Непонятно почему, но  если в else я закладываю echo,
-        //то это echo выводится постоянно. Когда же я закладываю header,
-        //то при попытке открыть страницу автоизации в браузере из IDE сразу же
-        //отрабатывается else.
-        //Очевидно,я чего-то недопонимаю в логике работы. Прошу разъяснить.
-
-        /*else{
-            echo "Asta la vista!";
-        }
-        */
     }
 }
 entry();
+*/
+//Логин для авторизации: Iulius
+//Пароль для авторизации: iulius1990
+require 'ClassEnter.php';
+$Door = new Enter("localhost");
+$Door->entry();
 ?>
 <!doctype html>
 <html lang="en">
@@ -93,10 +86,10 @@ entry();
 <form class="in" method="post">
     <p class="start">Авторизация</p>
     <p>
-        Введите логин <input class="in_log" type="text" name="login">
+        Введите логин <input class="in_log" type="text" name="login" >
     </p>
     <p>
-        Введите пароль <input class="in_pas" type="password" name="password">
+        Введите пароль <input class="in_pas" type="password" name="password" >
     </p>
     <p class="button">
         <button>Отправить</button>

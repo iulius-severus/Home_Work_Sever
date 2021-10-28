@@ -22,17 +22,18 @@ elseif ($site == 'Bitrix'){
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="../Styles/links.css">
+    <title>Переход на сторонние сайты</title>
 </head>
 <body style="background-color: <? echo $_COOKIE['color']?>">
-    <div>
-        <p>Предлагаем Вам посетить следующие сайты.</p><br>
-        <form method="post" id="">
-            <select name="site">
+    <div class="links">
+        <p>Предлагаем Вам посетить следующие сайты:</p><br>
+        <form method="post" id="" class="form">
+            <select name="site" class="select">
                 <option value="Fact">Fact</option>
                 <option value="Bitrix">Bitrix</option>
             </select>
-            <input type="submit" value="Перейти">
+            <input type="submit" value="Перейти" class="submit" >
         </form>
     </div>
 </body>
